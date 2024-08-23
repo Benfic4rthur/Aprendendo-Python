@@ -1,0 +1,5 @@
+nome = input("Nome: ")
+altura = input("altura: ")
+peso = input("Peso:")
+icm = int(peso) / (float(altura) * float(altura))
+print("ICM: ", icm)
