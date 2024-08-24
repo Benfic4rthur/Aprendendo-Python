@@ -1,0 +1,1 @@
+variavel = f'{nome} o preço e {preco:.2f}'
