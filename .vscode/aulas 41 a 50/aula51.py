@@ -3,32 +3,33 @@ import os
 lista = []
 
 while True:
-    print("Selecione uma opção")
-    opcao = input("[i]nseririr [a]pagar [l]istar: ").lower()
+    print("Selecione uma opção")
+    opcao = input("[i]nserir [a]pagar [l]istar: ").lower()
 
     if opcao == "i":
         os.system("cls")
         incluir = input("Nome: ").lower()
         lista.append(incluir)
         os.system("cls")
+
     elif opcao == "a":
-        if len(lista) == 0:
-            os.system("cls")
+        os.system("cls")
+        if not lista:
             print("Nada para apagar")
         else:
-            os.system("cls")
             apagar = input("Nome: ").lower()
             if apagar in lista:
-                os.system("cls")
                 lista.remove(apagar)
+                print(f"Nome '{apagar}' removido com sucesso.")
             else:
-                print("Nome não encontrado")
+                print("Nome não encontrado")
+
     elif opcao == "l":
-        if len(lista) == 0:
-            os.system("cls")
+        os.system("cls")
+        if not lista:
             print("Nada para listar")
         else:
-            os.system("cls")
-            print(*lista, sep="-")
+            print("Lista de nomes:", *lista, sep=" - ")
+
     else:
-        print("Opção inválida")
+        print("Opção inválida")
