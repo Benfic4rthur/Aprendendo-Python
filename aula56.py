@@ -2,13 +2,9 @@ import os
 
 while True:
     cpf = input("digite seu cpf: ")
-    if len(cpf) != 11:
+    if len(cpf) != 11 or not cpf.isdigit():
         os.system("cls")
-        print("Quantidade de digitos invalida")
-        continue
-    elif len(cpf) == 11 and not cpf.isnumeric():
-        os.system("cls")
-        print("Quantidade de digitos invalida ou letras digitadas")
+        print("Quantidade de digitos inválida ou letras digitadas")
         continue
     nove_digitos = cpf[:9]
     contador_regressivo_1 = 10
@@ -28,7 +24,7 @@ while True:
     digito_2 = digito_2 if digito_2 <= 9 else 0
     if digito_1 == int(cpf[9]) and digito_2 == int(cpf[10]):
         os.system("cls")
-        print(f"O CPF {cpf} informado e valido")
+        print(f"O CPF {cpf} informado e válido")
     else:
         os.system("cls")
-        print(f"O CPF {cpf} informado e invalido")
+        print(f"O CPF {cpf} informado e inválido")
